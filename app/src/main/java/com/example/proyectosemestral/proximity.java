@@ -40,7 +40,7 @@ public class proximity extends AppCompatActivity {
                         estado.setText("¡Algo está cerca!");
                     } else {
                         mainLayout.setBackgroundColor(Color.GREEN);
-                        estado.setText("WOOOOOOOOOOOOOOOW Nada cerca");
+                        estado.setText("Nada cerca");
                     }
                 }
 
