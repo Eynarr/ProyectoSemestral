@@ -1,0 +1,56 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFDE7">
+
+    <ImageView
+        android:id="@+id/imageObject"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/manzana"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:id="@+id/textQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Con qué letra empieza?"
+        android:textSize="24sp"
+        android:layout_marginBottom="20dp"
+        android:textColor="#000" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnOption1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="A"
+            android:textSize="20sp"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:id="@+id/btnOption2"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="M"
+            android:textSize="20sp"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:id="@+id/btnOption3"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="P"
+            android:textSize="20sp"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+</LinearLayout>
