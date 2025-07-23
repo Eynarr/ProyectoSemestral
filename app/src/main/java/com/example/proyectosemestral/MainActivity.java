@@ -1,7 +1,8 @@
 package com.example.proyectosemestral;
 
-import android.media.MediaPlayer;
+import android.app.AlertDialog;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnimationUtils;
@@ -9,7 +10,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -80,10 +83,26 @@ public class MainActivity extends AppCompatActivity {
         index++;
 
         if (index >= palabras.length) {
-            // Juego terminado → ir a sensor
-            Intent intent = new Intent(MainActivity.this, proximity.class);
-            startActivity(intent);
-            finish(); // Cierra el juego si ya no se va a usar
+            // Mostrar opciones al finalizar el juego
+            new AlertDialog.Builder(this)
+                    .setTitle("¡Juego Terminado!")
+                    .setMessage("¿Qué deseas hacer ahora?")
+                    .setCancelable(false)
+                    .setPositiveButton("Volver a jugar", (dialog, which) -> {
+                        index = 0;
+                        mostrarPalabra();
+                    })
+                    .setNegativeButton("Ir al menú", (dialog, which) -> {
+                        Intent intent = new Intent(MainActivity.this, InicioActivity.class);
+                        startActivity(intent);
+                        finish();
+                    })
+                    .setNeutralButton("Ir al sensor", (dialog, which) -> {
+                        Intent intent = new Intent(MainActivity.this, proximity.class);
+                        startActivity(intent);
+                        finish();
+                    })
+                    .show();
         } else {
             mostrarPalabra();
         }
